@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0F2D2B;
+  --color-plum: #3D1A3F;
+  --color-marigold: #E8A33D;
+  --color-marigold-soft: #F3C878;
+  --color-parchment: #F6F1E4;
+  --color-parchment-dim: #EAE2CC;
+  --color-linen: #FBF9F3;
+  --color-clay: #B4532A;
+  --color-teal: #1E5F5A;
+  --color-ok: #3F7D5C;
+  --color-warn: #C97A2B;
+  --color-danger: #A63A3A;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-linen);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-marigold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+.stall-number {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.woven-rule {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-marigold) 0px,
+    var(--color-marigold) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  height: 2px;
+}
+
+::selection {
+  background-color: var(--color-marigold-soft);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-parchment); }
+::-webkit-scrollbar-thumb { background: var(--color-marigold-soft); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-marigold); }
